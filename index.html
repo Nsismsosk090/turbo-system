@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saraswati Maa — AR</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin:0; background:#faf7fc; color:#2d2352; }
+    header { padding: 24px; text-align:center; }
+    main { display:flex; flex-direction:column; align-items:center; gap:16px; padding: 0 16px 32px; }
+    model-viewer { width: 100%; max-width: 480px; height: 520px; background:#fff; border-radius:16px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+    a.btn { background:#6b4bb3; color:#fff; padding:12px 16px; border-radius:10px; text-decoration:none; }
+    footer { font-size:12px; color:#5a4a88; padding:16px; text-align:center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Saraswati Maa — Augmented Reality</h1>
+    <p>Tap the AR button below. On iPhone it uses Quick Look (.usdz). On Android it uses Scene Viewer (.glb).</p>
+  </header>
+  <main>
+    <model-viewer src="saraswati.glb"
+                  ios-src="Saraswati_Res.usdz"
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  camera-controls
+                  auto-rotate
+                  exposure="1.1"
+                  environment-image="neutral"
+                  alt="Goddess Saraswati blessing with veena">
+      <button slot="ar-button" class="ar-button">View in AR</button>
+    </model-viewer>
+    <div class="btns">
+      <a class="btn" href="saraswati.glb">Download GLB</a>
+      <a class="btn" href="Saraswati_Res.usdz">Open USDZ</a>
+    </div>
+  </main>
+  <footer>
+    <p><strong>Credit:</strong> This work is based on "Saraswati Res" by Song.Borin, licensed under CC-BY-4.0.</p>
+  </footer>
+</body>
+</html>
